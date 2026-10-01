@@ -1,0 +1,22 @@
+anime-tv-scheduler-spec.md
+node_modules
+
+# dependencies
+frontend/node_modules/
+backend/node_modules/
+consumet/node_modules/
+
+# build output
+frontend/.svelte-kit/
+frontend/build/
+
+# env
+backend/.env
+
+# sqlite db file
+backend/src/db/*.db
+backend/anitv.db
+
+# OS junk
+.DS_Store
+Thumbs.db

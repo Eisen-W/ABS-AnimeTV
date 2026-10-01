@@ -1,0 +1,15 @@
+{
+  "name": "anitv-backend",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "bun --watch src/index.js",
+    "start": "bun src/index.js"
+  },
+  "dependencies": {
+    "hono": "^4.0.0",
+    "better-sqlite3": "^9.0.0",
+    "node-cron": "^3.0.0",
+    "fluent-ffmpeg": "^2.1.0",
+    "@consumet/extensions": "^1.8.3"
+  }
+}
