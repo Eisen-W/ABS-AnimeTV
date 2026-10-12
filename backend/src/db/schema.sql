@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS channels (
     pool_filters     TEXT DEFAULT '{}',
     blacklist        TEXT DEFAULT '{}',
     exceptions       TEXT DEFAULT '[]',
-    filler_playlists TEXT DEFAULT '[]',
+    filler_path      TEXT,
     provider_order   TEXT DEFAULT '["hianime","gogoanime","animepahe"]'
 );
 
@@ -63,18 +63,7 @@ CREATE TABLE IF NOT EXISTS alerts (
     resolved   INTEGER DEFAULT 0
 );
 
--- Cached YouTube filler videos per channel
-CREATE TABLE IF NOT EXISTS filler_videos (
-    id         TEXT PRIMARY KEY,
-    channel_id TEXT NOT NULL,
-    youtube_id TEXT NOT NULL,
-    duration_s INTEGER,
-    fetched_at INTEGER,
-    FOREIGN KEY (channel_id) REFERENCES channels(id) ON DELETE CASCADE
-);
-
 -- Indexes
 CREATE INDEX IF NOT EXISTS idx_slots_channel_date ON slots(channel_id, date);
 CREATE INDEX IF NOT EXISTS idx_slots_status ON slots(status);
 CREATE INDEX IF NOT EXISTS idx_alerts_channel ON alerts(channel_id, resolved);
-CREATE INDEX IF NOT EXISTS idx_filler_channel ON filler_videos(channel_id);
