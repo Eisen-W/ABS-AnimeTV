@@ -1,2 +1,20 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    import ChannelSwitcher from '$lib/components/channel/ChannelSwitcher.svelte';
+</script>
+
+<div class="home">
+    <ChannelSwitcher />
+    <main>
+        <h2>Select a channel to start watching.</h2>
+    </main>
+</div>
+
+<style>
+    .home { display: flex; height: 100vh; }
+    main {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        color: #444;
+    }
+</style>

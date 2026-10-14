@@ -1,0 +1,9 @@
+services:
+  aniwatch:
+    image: ghcr.io/ghoshritesh12/aniwatch-api:latest
+    container_name: anitv-aniwatch
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+    environment:
+      - PORT=4000
